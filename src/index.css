@@ -1,0 +1,66 @@
+.Notes{
+   text-align: center;
+}
+
+.check-notes{
+    margin:20px 0px;
+    border: none;
+    padding: 5px;
+}
+.form{
+    background-color: aquamarine;
+    padding: 40px 0px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 8px -1px;
+}
+.form h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:30px ;
+    margin-bottom: 40px;
+    font-weight: 800;
+    text-shadow: 0px 0px 2px;
+}
+.note-title{
+    margin-bottom: 10px;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 0px 5px 1px rgb(13, 1, 1);
+    border: none;
+
+}
+.note-description{
+ margin-top: 10px;
+ padding:20px;
+ box-shadow: 0px 0px 5px 1px rgb(13, 1, 1);
+ border: none;
+}
+
+.btn Button{
+    margin: 20px;
+}
+.btn span{
+    font-size: 15px;
+}
+.show-form input{
+
+    margin-bottom: 10px;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 0px 5px 1px rgb(13, 1, 1);
+    border: none;
+
+}
+.show-form textarea{
+    margin-top: 10px;
+    padding:20px;
+    box-shadow: 0px 0px 5px 1px rgb(13, 1, 1);
+    border: none;
+}
+.show-form{
+    padding: 40px;
+    box-shadow: 0px 0px 5px 1px rgb(13, 1, 1);
+  
+
+}
