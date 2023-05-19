@@ -41,7 +41,7 @@ const NewNotes = () => {
             <div className="Notes">
               {isNoteAdded && <NoteAdded />}
               <Button className="mt-5 mb-2" variant="outlined" onClick={() => navigate("/add")} >
-               Check The Notes<ArrowCircleRightIcon/>
+               Check The Notes &nbsp;&nbsp;<ArrowCircleRightIcon/>
               </Button>
               <div className="form">
                 <h1>
@@ -64,11 +64,10 @@ const NewNotes = () => {
                       type="text"
                       value={description}
                       onChange={(e) => setDescription(e.target.value)}
-                      required
-                    />
+                      required />
                   </div>
                   <Button variant="outlined" type="submit" className="mt-3" >
-                    Add Note<AddIcon />
+                    Add Note &nbsp;&nbsp;<AddIcon />
                   </Button>
                 </form>
               </div>

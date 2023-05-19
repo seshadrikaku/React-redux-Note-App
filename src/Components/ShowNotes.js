@@ -7,7 +7,7 @@ import { DeleteNOTE, EditNOTE } from "../Redux/Action";
 import Button from '@mui/material/Button';
 import { NoteDeleted, NoteEdited } from "./Message";
 import AddIcon from '@mui/icons-material/Add';
-import UpdateIcon from '@mui/icons-material/Update';
+
 
 
 
@@ -38,7 +38,6 @@ const ShowNotes = () => {
   const handleSave = () => {
     dispatch(EditNOTE(editIndex, editTitle, editDescription));
     setEditIndex(null);
-
     setEditTitle("");
     setEditDescription("");
     setisNoteEdited(true);
@@ -48,87 +47,60 @@ const ShowNotes = () => {
   };
 
   return (
-    <div >
+    <>
       {isNoteDeleted && <NoteDeleted />}
       {isNoteEdited && <NoteEdited />}
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <div className="btn" >
-              <Button variant="contained"
-                onClick={() => navigate("/")}>
-                Add Notes<AddIcon />
-              </Button>
+          <div className="show-form col-12 mt-1">
+            <div >
+              <div className="buttons " >
+                <Button variant="contained"
+                  onClick={() => navigate("/")}>
+                  Add Notes &nbsp;&nbsp;<AddIcon />
+                </Button>
 
-              <Button variant="contained" onClick={() => navigate("/add")} >
-                Total Notes &nbsp;
-                <span>
-                  {allNotes.length}
-                </span>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <div className="show-form">
+                <Button variant="contained" onClick={() => navigate("/add")} >
+                  Total Notes &nbsp;
+                  <span>
+                    {allNotes.length}
+                  </span>
+                </Button>
+              </div>
               {allNotes.map((NOTE, index) => (
-                <div key={index}>
+                <div className="Data" key={index}>
                   {editIndex === index ? (
                     <div >
-                      <div >
-                        <input value={editTitle}
-                          onChange={(e) => setEditTitle(e.target.value)} />
-                      </div>
-                      <div >
-                        <textarea value={editDescription}
-                          onChange={(e) => setEditDescription(e.target.value)} />
-                      </div>
-                      <div >
-                        <Button
-                          onClick={handleSave}>
-                          Save
-                        </Button>
-                        <Button
-                          onClick={() => setEditIndex(null)}>
-                          Cancel
-                        </Button>
-                      </div>
+                      <input value={editTitle} onChange={(e) => setEditTitle(e.target.value)} />
+                      <br />
+                      <textarea value={editDescription} onChange={(e) => setEditDescription(e.target.value)} />
+                      <br />
+                      <Button variant="outlined" onClick={handleSave}>&nbsp;&nbsp;Save&nbsp;&nbsp;</Button>
+                      <Button variant="outlined" onClick={() => setEditIndex(null)}>Cancel</Button>
                     </div>
                   ) : (
-                    <div className="mt-2 mb-2 bg-light p-4">
-                      <h4 >
-                       Title: {NOTE.title}
-                      </h4>
-                      <hr/>
-                      <p >
-                      Description: {NOTE.description}
-                      </p>
-                      <hr/>
+                    <div className="Show-Notes">
+                      <h4 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{NOTE.title}</h4>
+                      <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {NOTE.description} </div>
                     </div>
-                  )}
+                    )}
 
-                  <div >
-                    <Button onClick={() => handleEdit(index)} className="">
-                      <UpdateIcon />
-                    </Button>
-                    <Button onClick={() => handleDelete(index)} variant="outlined" >
-                      Delete
-                    </Button>
+                  <div className="changing-btn" >
+                    <Button onClick={() => handleEdit(index)} variant="outlined">Update</Button>
+                    <Button onClick={() => handleDelete(index)} variant="outlined" >Delete</Button>
                   </div>
+                  
                 </div>
               ))}
-            </div>
 
+            </div>
           </div>
         </div>
       </div>
 
 
 
-    </div>
+    </>
   );
 };
 
